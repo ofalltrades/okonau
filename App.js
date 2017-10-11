@@ -4,7 +4,6 @@ import React, { Component } from 'react'
 import TodoList from './js/TodoList'
 
 import {
-  AppRegistry,
   Image,
   StyleSheet,
   Text,
@@ -13,7 +12,7 @@ import {
 
 const markdown =
 `* clean kitchen
-* bathe now
+* find the dog
 * ~~wash car~~`;
 
 export default class App extends Component {
@@ -39,7 +38,7 @@ export default class App extends Component {
 
              <View style={ styles.footer }>
                <Text style={styles.footerText }>
-                 <Image source={require('./assets/icons/wraithware-logo.png')}/>
+                 <Image source={ require('./assets/icons/wraithware-logo.png')} />
                </Text>
              </View>
            </View>
@@ -47,7 +46,7 @@ export default class App extends Component {
 
   renderCurrentScene() {
     if (this.state.currentScene === 'main') {
-      return <TodoList initMarkdown={markdown}></TodoList>
+      return <TodoList rawMarkdown={ markdown }></TodoList>
     } else {
       return <View><Text>settings scene</Text></View>
     }
@@ -123,5 +122,3 @@ const styles = StyleSheet.create({
     textAlign: 'right'
   }
 })
-
-// AppRegistry.registerComponent('App', () => App)
