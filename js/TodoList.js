@@ -1,3 +1,5 @@
+// // @flow
+
 'use strict'
 
 import React, { Component } from 'react'
@@ -6,11 +8,15 @@ import {
   StyleSheet,
   Text,
   View,
-  FlatList,
-  Header
+  FlatList
 } from 'react-native'
 
-import { List, ListItem } from 'react-native-elements'
+import {
+  List,
+  ListItem,
+  Header,
+  TouchableHighlight
+} from 'react-native-elements'
 
 export default class TodoList extends Component {
   // setup
@@ -37,10 +43,11 @@ export default class TodoList extends Component {
     console.log(View)
     return (
       <View style={ styles.container }>
-        <List>
+        <Header centerComponent={{ text: 'okonau', style: { color: '#fff' } }} />
+        <List containerStyle={{ marginTop: 100, borderColor: 'transparent' }}>
           <FlatList
-            data={[{ key: 'dsa' }]}
-            renderItem={ ({ item }) => <ListItem title={ item.key } /> } />
+            data={[{ key: 'dsa' }, { key: 'bar' }]}
+            renderItem={ ({ item }) => <ListItem style={{ borderColor: 'transparent' }} title={ item.key } fontFamily='Courier' /> } />
         </List>
       </View>
     )
@@ -162,5 +169,3 @@ const styles = StyleSheet.create({
      height: 44
    },
 })
-
-

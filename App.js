@@ -20,7 +20,7 @@ export default class App extends Component {
     super()
 
     this.renderCurrentScene = this.renderCurrentScene.bind(this)
-    this.renderCurrentToolbar = this.renderCurrentToolbar.bind(this)
+    // this.renderCurrentToolbar = this.renderCurrentToolbar.bind(this)
 
     // scenes: login, main, settings
     this.state = {
@@ -30,7 +30,7 @@ export default class App extends Component {
 
   render() {
     return <View style={ styles.container }>
-             { this.renderCurrentToolbar() }
+             { /* this.renderCurrentToolbar() */ }
 
              <View style= {styles.content }>
                { this.renderCurrentScene() }
@@ -52,26 +52,26 @@ export default class App extends Component {
     }
   }
 
-  renderCurrentToolbar() {
-    let nextScene, toolbarBtn
+  // renderCurrentToolbar() {
+  //   let nextScene, toolbarBtn
 
-    if (this.state.currentScene === 'main') {
-      nextScene = 'settings'
-      toolbarBtn = '\u2699'
-    } else {
-      nextScene = 'main'
-      toolbarBtn = '\u270E'
-    }
+  //   if (this.state.currentScene === 'main') {
+  //     nextScene = 'settings'
+  //     toolbarBtn = '\u2699'
+  //   } else {
+  //     nextScene = 'main'
+  //     toolbarBtn = '\u270E'
+  //   }
 
-    return <View style={styles.toolbar}>
-             <Text style={styles.toolbarTitle}>okonau</Text>
-             <Text
-               onPress={() => this.setState({ currentScene: nextScene })}
-               style={styles.toolbarBtn}>
-               {toolbarBtn}
-             </Text>
-           </View>
-  }
+  //   return <View style={styles.toolbar}>
+  //            <Text style={styles.toolbarTitle}>okonau</Text>
+  //            <Text
+  //              onPress={() => this.setState({ currentScene: nextScene })}
+  //              style={styles.toolbarBtn}>
+  //              {toolbarBtn}
+  //            </Text>
+  //          </View>
+  // }
 }
 
 const styles = StyleSheet.create({
