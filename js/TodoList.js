@@ -1,4 +1,4 @@
-// // @flow
+// @flow
 
 'use strict'
 
@@ -75,7 +75,7 @@ export default class TodoList extends Component {
     // })
   // }
 
-  markdownToList(markdown) {
+  markdownToList(markdown: String) {
     return markdown.replace(/\* /g, '')
                    .split('\n')
                    .reduce(
